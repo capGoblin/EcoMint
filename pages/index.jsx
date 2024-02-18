@@ -7,7 +7,7 @@ import Transactions from "@/components/Transactions";
 import Hero from "@/components/Hero";
 import styles from "@/styles/Home.module.css";
 import Head from 'next/head'; 
-import Upload from "@/components/Upload";
+import Actions from "@/components/Actions";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
       <Minters />
       <BurnToken />
       <Transactions />
-      <Upload />
+      <Actions />
       <Footer />
     </div>
   );
