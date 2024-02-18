@@ -5,7 +5,10 @@ export default function Footer() {
   const handleClick = (e) => {
     const link = e.target.getAttribute("name");
     if (link === "github")
-      window.open("https://github.com/sauravchamoli17/eco-reward-token", "_blank");
+      window.open(
+        "https://github.com/sauravchamoli17/eco-reward-token",
+        "_blank"
+      );
   };
 
   return (

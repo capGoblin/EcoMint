@@ -22,7 +22,10 @@ function Hero() {
           </span>
         </span>
         <p>
-          Eco Reward Token is an ERC-20 token deployed on the Polygon Mumbai Testnet. It aims to incentivize and reward environmentally friendly activities. Each Eco token costs 0.001 MATIC, and there are a total of 1000 tokens available.
+          Eco Reward Token is an ERC-20 token deployed on the Polygon Mumbai
+          Testnet. It aims to incentivize and reward environmentally friendly
+          activities. Each Eco token costs 0.001 MATIC, and there are a total of
+          1000 tokens available.
         </p>
         {!accountRef.current && (
           <button onClick={connectWallet} className="btn-hero">
@@ -55,7 +58,11 @@ function Hero() {
               </p>
             </div>
             <div className={styles.cardRight}>
-              <img src="https://mumbai.polygonscan.com/images/svg/brands/polygon.svg" width="160px" alt="polygon" />
+              <img
+                src="https://mumbai.polygonscan.com/images/svg/brands/polygon.svg"
+                width="160px"
+                alt="polygon"
+              />
             </div>
           </div>
         </div>
