@@ -1,0 +1,29 @@
+
+.button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #008d55;
+    border-radius: 6px;
+    font-size: 16px;
+    width: max-content;
+    margin: 0 auto;
+    margin-top: 0;
+    font-weight: 500;
+    color: white;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.488);
+    transition: all 0.4s ease;
+  }
+  
+.button{
+    background-color: #00a78e;
+  }
+  
+.button{
+    transform: scale(0.8);
+  }
+
