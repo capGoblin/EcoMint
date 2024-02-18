@@ -16,7 +16,10 @@ contract ECOtoken is ERC20, ERC20Burnable, Ownable {
 
     function mint(uint amount) public payable {
         require(totalSupply() + amount <= maxSupply, "Max Supply Exceeded");
-        require(msg.value * 10 ** decimals() / amount >= tokenPrice, "Pay Ether According to Token Price i.e 0.1 ether per token");
+        require(
+            (msg.value * 10 ** decimals()) / amount >= tokenPrice,
+            "Pay Ether According to Token Price i.e 0.1 ether per token"
+        );
         _mint(msg.sender, amount);
     }
 
@@ -24,7 +27,16 @@ contract ECOtoken is ERC20, ERC20Burnable, Ownable {
         payable(owner()).transfer(address(this).balance);
     }
 
-    function returnTokenomics() public view returns(uint _myBalance, uint _maxSupply, uint _totalSupply, uint _tokenPrice){
+    function returnTokenomics()
+        public
+        view
+        returns (
+            uint _myBalance,
+            uint _maxSupply,
+            uint _totalSupply,
+            uint _tokenPrice
+        )
+    {
         return (balanceOf(msg.sender), maxSupply, totalSupply(), tokenPrice);
     }
 }
