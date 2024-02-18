@@ -1,9 +1,6 @@
 //import material ui
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import { Modal } from '@mui/material';
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -16,25 +13,25 @@ export default function Upload(){
     }, []);
     
     const handleClose = () => {
-        if (modal.loading) return;
+        if (Modal.loading) return;
     
-        setModal({ ...modal, show: false });
+        setModal({ ...Modal, show: false });
     };
     
-    if (modal.method === "Burn") text = "1 ECO Burned";
-    if (modal.method === "Mint") text = "Mint Sucessful";
-    if (modal.method === "Transfer") text = "Transfer Sucessful";
+    if (Modal.method === "Burn") text = "1 ECO Burned";
+    if (Modal.method === "Mint") text = "Mint Sucessful";
+    if (Modal.method === "Transfer") text = "Transfer Sucessful";
     
-    const modalContent = modal.show ? (
+    const ModalContent = Modal.show ? (
         <>
         <div onClick={handleClose} className={styles.overlay} />
         <div className={styles.container}>
-            {modal?.loading ? (
+            {Modal?.loading ? (
             <p>Transaction Initiated</p>
             ) : (
             <p>Transaction Mined</p>
             )}
-            {modal?.loading ? (
+            {Modal?.loading ? (
             <Loader />
             ) : (
             <>
@@ -43,28 +40,33 @@ export default function Upload(){
             </>
             )}
             <a
-            href={`https://mumbai.polygonscan.com/tx/${modal.txn}`}
+            href={`https://mumbai.polygonscan.com/tx/${Modal.txn}`}
             target="_blank"
             rel="noreferrer"
             className={styles.link}
             >
             View on Block Explorer <GoLinkExternal />
             </a>
-            {!modal?.loading && (
-            <button onClick={handleClose} className={styles.close}>
+            {!Modal?.loading && (
+                    <Button
+                        component="label"
+                        role={undefined}
+                        variant="contained"
+                        tabIndex={-1}
+                        startIcon={<CloudUploadIcon />} 
+                        onClick={handleClose} 
+                        className={styles.close}>
                 Close
-            </button>
+            </Button>
             )}
         </div>
         </>
     ) : null;
     
-    if (isBrowser) {
-        return ReactDOM.createPortal(
-        modalContent,
-        document.getElementById("modal-root")
-        );
-    } else {
-        return null;
-    }    
+    return isBrowser
+        ? ReactDOM.createPortal(
+            ModalContent,
+            document.getElementById("modal-root")
+        )
+        : null;   
 }
