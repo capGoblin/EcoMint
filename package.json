@@ -31,5 +31,17 @@
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.4",
     "hardhat": "^2.14.0"
-  }
+  },
+  "main": "hardhat.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capGoblin/EcoMint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/capGoblin/EcoMint/issues"
+  },
+  "homepage": "https://github.com/capGoblin/EcoMint#readme",
+  "description": ""
 }
